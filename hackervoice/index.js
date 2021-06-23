@@ -11,6 +11,7 @@
         response = "Access denied."
     }
 
+
     context.res = {
         // status: 200, /* Defaults to 200 */
         body: response
