@@ -26,7 +26,7 @@ module.exports = async function (context, req) {
         var random_value = Math.floor(names.length * Math.random())
         var resultname = names[random_value]
 
-        return resultnames
+        return resultname
     }
 
     let name1 = getNames()
