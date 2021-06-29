@@ -6,6 +6,25 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
+<<<<<<< HEAD
   "dependencies": {},
   "devDependencies": {}
+=======
+  "dependencies": {
+    "morse-code-converter": "^1.0.2"
+  },
+  "devDependencies": {},
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaleykwan/serverlesslivestream1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaleykwan/serverlesslivestream1/issues"
+  },
+  "homepage": "https://github.com/kaleykwan/serverlesslivestream1#readme"
+>>>>>>> f960e16407c88d0ab1ed2c1638a04bbd2689e290
 }
