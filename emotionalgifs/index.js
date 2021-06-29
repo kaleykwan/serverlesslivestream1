@@ -25,8 +25,10 @@ module.exports = async function (context, req) {
 
     const main_emotion = Object.keys(emotions).find(key => emotions[key] === Math.max(...objects));
 
+    let gifUrl = await findGifs(main_emotion)
+
     context.res = {
-	    body: main_emotion
+	    body: gifUrl
     };
 
     console.log(result)
@@ -56,4 +58,11 @@ async function analyzeImage(img){
 
     let emotionData = await resp.json()
     return emotionData
+}
+
+async function findGifs(emotion) {
+    const giphykey = process.env.giphykey
+    let gifresponse = await fetch("https://api.giphy.com/v1/gifs/translate?api_key=" + giphykey + "&s=" + emotion)
+    let gifresp = await gifresponse.json()
+    return gifresp.data.url
 }
