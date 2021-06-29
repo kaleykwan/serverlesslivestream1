@@ -37,7 +37,7 @@ async function analyzeImage(img){
         //COMPLETE THE CODE
     let resp = await fetch(uriBase + '?' + params.toString(), {
         method: 'POST',  //WHAT TYPE OF REQUEST?
-        body: 'img',  //WHAT ARE WE SENDING TO THE API?
+        body: img,  //WHAT ARE WE SENDING TO THE API?
           
             //ADD YOUR TWO HEADERS HERE
         headers: {
