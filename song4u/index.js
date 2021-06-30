@@ -44,24 +44,25 @@ async function analyzeImage(img){
     
     // receive the response
     let data = await resp.json();
+
+    return data;
     
-    let age = result[0].faceAttributes.age
-
-    if (age >=5 && age <=25) {
-        id = "GenZ"
-    } else if (age >=26 && age <=41) {
-        id = "GenY"
-    } else if (age >=42 && age <=57) {
-        id = "GenX"
-    } else if (age >=58 && age <=76) {
-        id = "BabyBoomers"
-    } else {
-        id = "Unknown"
-    }
-
-    return id;
 }
-    
+  
+let age = result[0].faceAttributes.age
+
+if (age >=5 && age <=25) {
+    id = "GenZ"
+} else if (age >=26 && age <=41) {
+    id = "GenY"
+} else if (age >=42 && age <=57) {
+    id = "GenX"
+} else if (age >=58 && age <=76) {
+    id = "BabyBoomers"
+} else {
+    id = "Unknown"
+}
+
 
 
 
