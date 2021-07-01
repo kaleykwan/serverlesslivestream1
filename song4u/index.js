@@ -5,21 +5,43 @@ module.exports = async function (context, req) {
 
     const queryObject = querystring.parse(req.body);
     //random comment
+    
+    var url = queryObject.MediaUrl0
+    
+    var image = downloadImage(url)
+
+    var result = await analyzeImage(image)
+
+    let age = result[0].faceAttributes.age
+
+    if (age >=5 && age <=25) {
+        id = "GenZ"
+    } else if (age >=26 && age <=41) {
+        id = "GenY"
+    } else if (age >=42 && age <=57) {
+        id = "GenX"
+    } else if (age >=58 && age <=76) {
+        id = "BabyBoomers"
+    } else {
+        id = "Unknown"
+    }
 
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: queryObject.MediaUrl0
+        body: id
     };
 }
 
-function downloadImage() {
-    let resp = await fetch("https://hackervoicee1.azurewebsites.net/api/song4u?code=A1O/W2eNLaSzs326aLuKXfKd/Y0rODgEJRH64ZndscBacoknHa1lRA==", {
+function downloadImage(url) {
+    let resp = await fetch(url, {
         method: 'GET',
     })
 
     // receive the response
     let data = await resp.arrayBuffer()
     // we are receiving it as a Buffer since this is binary data
+
+    return data
 }
    
 async function analyzeImage(img){
@@ -45,23 +67,10 @@ async function analyzeImage(img){
     // receive the response
     let data = await resp.json();
 
-    return data;
-    
+    return data;  
 }
-  
-let age = result[0].faceAttributes.age
 
-if (age >=5 && age <=25) {
-    id = "GenZ"
-} else if (age >=26 && age <=41) {
-    id = "GenY"
-} else if (age >=42 && age <=57) {
-    id = "GenX"
-} else if (age >=58 && age <=76) {
-    id = "BabyBoomers"
-} else {
-    id = "Unknown"
-}
+
 
 
 
