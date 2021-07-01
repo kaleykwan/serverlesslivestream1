@@ -7,10 +7,15 @@ module.exports = async function (context, req) {
     //random comment
     
     var url = queryObject.MediaUrl0
-    
-    var image = downloadImage(url)
+    let resp = await fetch(url, {
+        method: 'GET',
+    })
 
-    var result = await analyzeImage(image)
+    // receive the response
+    let data = await resp.arrayBuffer()
+    // we are receiving it as a Buffer since this is binary data
+
+    var result = await analyzeImage(data)
 
     let age = result[0].faceAttributes.age
 
@@ -33,22 +38,10 @@ module.exports = async function (context, req) {
         body: id
     };
 }
-
-function downloadImage(url) {
-    let resp = await fetch(url, {
-        method: 'GET',
-    })
-
-    // receive the response
-    let data = await resp.arrayBuffer()
-    // we are receiving it as a Buffer since this is binary data
-
-    return data
-}
    
 async function analyzeImage(img){
-    const subscriptionKey = process.env.SUBSCRIPTIONKEY;
-    const uriBase = process.env.ENDPOINT + '/face/v1.0/detect';
+    const subscriptionKey = "d23adf0d79e5438aac8f603d308df9a5";
+    const uriBase = "https://emotionalapi.cognitiveservices.azure.com/face/v1.0/detect";
     
     let params = new URLSearchParams({
         'returnFaceId': 'true',
