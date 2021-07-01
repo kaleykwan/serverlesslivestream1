@@ -7,6 +7,7 @@ module.exports = async function (context, req) {
     //random comment
     
     var url = queryObject.MediaUrl0
+    
     let resp = await fetch(url, {
         method: 'GET',
     })
@@ -40,8 +41,8 @@ module.exports = async function (context, req) {
 }
    
 async function analyzeImage(img){
-    const subscriptionKey = "d23adf0d79e5438aac8f603d308df9a5";
-    const uriBase = "https://emotionalapi.cognitiveservices.azure.com/face/v1.0/detect";
+    const subscriptionKey = process.env.SUBSCRIPTIONKEY;
+    const uriBase = process.env.ENDPOINT + '/face/v1.0/detect';
     
     let params = new URLSearchParams({
         'returnFaceId': 'true',
