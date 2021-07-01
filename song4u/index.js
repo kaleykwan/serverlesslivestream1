@@ -14,7 +14,7 @@ module.exports = async function (context, req) {
 
     let age = result[0].faceAttributes.age
 
-    let id
+    let id = 0
 
     if (age >=5 && age <=25) {
         id = "GenZ"
