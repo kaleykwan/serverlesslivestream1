@@ -2,7 +2,7 @@ const querystring = require('querystring');
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
-
+    //comment
     const queryObject = querystring.parse(req.body);
 
     context.res = {
