@@ -2,7 +2,7 @@ function getImage(event) {
     event.preventDefault()
     var bunniForm = document.getElementById("myform");
     //get image and file name uploaded by user via the form
-    let nameInput = document.getElementById("username")
+    let nameInput = document.getElementById("name")
     let fileInput = document.getElementById("image")
     let file = fileInput.files[0]; //get image
 
