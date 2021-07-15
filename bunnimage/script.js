@@ -15,7 +15,7 @@ function getImage(event) {
         try {
             let url = "https://hackervoicee1.azurewebsites.net/api/bunnimage-upload1?code=b3ItgMNUu2Llp7wtnvSk3TQzE7L5yNJHl7bOXoZbJ11laymUbkhYmQ=="
             console.log("Image was uploaded")
-            const response = await fetch(url, {
+            const response = fetch(url, {
                 method: 'POST',
                 headers: {
                     'codename': nameInput.value
