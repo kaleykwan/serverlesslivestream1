@@ -1,3 +1,5 @@
+const { default: fetch } = require("node-fetch");
+
 function getImage(event) {
     event.preventDefault()
     var bunniForm = document.getElementById("myform");
@@ -32,4 +34,34 @@ function getImage(event) {
     
 }
 
+async function downloadImage() {
+    let username = document.getElementById("downloadusername").value
+
+    if(username != '') {
+        try {
+            let url = "https://hackervoicee1.azurewebsites.net/api/bunnimage-download?code=lu3aM9jMsRNDRs36AhEjmL71QzWCLZEbti9BK/TJ3b5eXeGvzZehzQ=="
+
+            console.log("Got file name, making GET request to download image")
+
+            fetch(url, {
+                headers: {
+                    username: username
+                }
+            })
+                .then(resp => {
+                    return resp.json()
+                })
+                .then(data => {
+                    console.log(data)
+                    console.log(data.downloadUri)
+                    window.open(data.downloadUri, "_self")
+                });
+            
+        } catch(err) {
+            alert(err)
+        }  
+    } else {
+        alert("No name error.")
+    }
+}
 
