@@ -1,3 +1,4 @@
 function y1k3s() {
-    document.getElementById("image").src = "https://cataas.com/cat/says/" + username
+    var textInput = document.getElementById("username").value
+    document.getElementById("image").src = "https://cataas.com/cat/says/" + textInput
 }
