@@ -1,5 +1,3 @@
-const { default: fetch } = require("node-fetch");
-
 function getImage(event) {
     event.preventDefault()
     var bunniForm = document.getElementById("myform");
