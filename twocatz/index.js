@@ -20,10 +20,11 @@ module.exports = async function (context, req) {
     
     let catpic1 = await getCat()
     let catpic2 = await getCat()
+    let catpic3 = await getCat()
+    let catpic4 = await getCat()
 
     function getNames() {
         var names = ["Shreya", "Emily", "Fifi", "Beau", "Evelyn", "Julia", "Daniel", "Fardeen"]
-        var random_value = Math.floor(names.length * Math.random())
         var resultname = names[random_value]
 
         return resultname
@@ -31,13 +32,17 @@ module.exports = async function (context, req) {
 
     let name1 = getNames()
     let name2 = getNames()
+    let name3 = getNames()
+    let name4 = getNames()
 
     context.res = {
         // status: 200, /* Defaults to 200 */
         body: {
             cat1: catpic1,
             cat2: catpic2,
-            names: [name1, name2]
+            cat3: catpic3,
+            cat4: catpic4,
+            names: [name1, name2, name3, name4]
         }
     };
 }
