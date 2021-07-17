@@ -3,6 +3,11 @@ const fetch = require('node-fetch')
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
+    var name1 = req.query.name1
+    var name2 = req.query.name2
+    var name3 = req.query.name3
+    var name4 = req.query.name4
+    
     async function getCat() {
         let resp = await fetch("https://251a9d93-8c22-472d-b5c5-c0b013b15125.mock.pstmn.io/bitproject", {
             method: 'GET'
@@ -22,18 +27,6 @@ module.exports = async function (context, req) {
     let catpic2 = await getCat()
     let catpic3 = await getCat()
     let catpic4 = await getCat()
-
-    function getNames() {
-        var names = ["Shreya", "Emily", "Fifi", "Beau", "Evelyn", "Julia", "Daniel", "Fardeen"]
-        var resultname = names[random_value]
-
-        return resultname
-    }
-
-    let name1 = getNames()
-    let name2 = getNames()
-    let name3 = getNames()
-    let name4 = getNames()
 
     context.res = {
         // status: 200, /* Defaults to 200 */
