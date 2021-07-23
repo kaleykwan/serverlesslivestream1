@@ -33,7 +33,7 @@
 - the information the user puts into the form will be used to tell the timer trigger when to send the text notification
 
 **CSS**
-- CSS will be used to make the frontend of the web app (the form) look better
+- CSS will be used to make the frontend of the web app (the form) look better and stylized
 - it will interact with the HTML form
 
 **JavaScript**
