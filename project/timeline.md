@@ -61,8 +61,8 @@
 > Checklist of everything you need to do to complete this issue
 - [ ] querying Cosmos DB based on start and end time
 - [ ] check if Cosmos DB returns results
-- [ ] setting up Twilio
-- [ ] calling Twilio
+- [ ] setting up Twilio number
+- [ ] calling Twilio API
 
 ## Week 3
 
