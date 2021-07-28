@@ -61,18 +61,19 @@
 > Checklist of everything you need to do to complete this issue
 - [ ] querying Cosmos DB based on start and end time
 - [ ] check if Cosmos DB returns results
-- [ ] calling Twilio
+- [ ] setting up Twilio number
+- [ ] calling Twilio API
 
 ## Week 3
 
 ### Documentation and Improvements:
 
 #### Description
-- 2-3 hours
+- document code and work on improvements
 
 #### ETA:
 > How long do you think it will take to complete this?
-- [Replace with eta]
+- 2-3 hours
 
 #### Objective:
 > Checklist of everything you need to do to complete this issue
