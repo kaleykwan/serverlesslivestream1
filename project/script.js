@@ -9,4 +9,6 @@ function formData() {
         method: 'POST',
         body: JSON.stringify({name: name, startTime: startTime, endTime: endTime, phonenumber: phonenumber}),
     });
+
+    $('#output').text("Check your phone for notifications!")
 }
