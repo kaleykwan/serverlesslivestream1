@@ -10,3 +10,23 @@ form
     margin-right: auto;
     text-align: left;
 }
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+}
+
+body {background-color:rgb(146, 215, 236);}
+        
+h1 {        
+        font-family: Georgia, serif;
+        font-size: 300%;
+    }
+        
+input {
+        padding: 12px 20px;
+        margin: 12px 0;
+        box-sizing: border-box;
+        border: 2px solid rgb(44, 44, 44);
+        border-radius: 4px;
+    }
