@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TimeBlocker</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <div class="form">
+        <h1 id="h1">TimeBlocker</h1>
+              <form id="myform" onsubmit="formData();return false" enctype="multipart/form-data">
+                  <input type="text" id="username" name="name" placeholder="First Name"/><br>
+                  <input type="time" id="startTime" name="startTime" placeholder="Task Start Time"/><br>
+                  <input type="time" id="endTime" name="endTime" placeholder="Task End Time"/><br>
+                  <input type="text" pattern="[0-9]{10}" id="phonenumber" name="phonenumber" placeholder="Phone Number"/><br>
+                  <input id="button" value="Submit" type="submit" />
+              </form>
+              <br/>
+        </div>
+    </body>  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
+     
+    <script src="script.js"></script>
+
+</html>
