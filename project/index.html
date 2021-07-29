@@ -4,21 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>The best form</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-      <div>
-              <h1 id="h1">Give your code some love ❤️</h1>
+      <div class="form">
+        <h1 id="h1">TimeBlocker</h1>
               <form id="myform" onsubmit="formData(event)" enctype="multipart/form-data">
-                  <input type="text" id="username" name="name" placeholder="Enter your first name"/><br>
-                  <input type="text" id="startTime" name="startTime" placeholder="Enter the start time for the task"/><br>
-                  <input type="text" id="endTime" name="endTime" placeholder="Enter the end time for the task"/><br>
-                  <input type="text" id="phonenumber" name="phonenumber" placeholder="Enter your phone number"/><br>
-                  <input id="button1" value="Submit" type="submit" />
-                  <input id="downloadusername" ></input>
-                  <input id="button2" value="Download" type="button" onClick="downloadImage()"></input>
+                  <input type="text" id="username" name="name" placeholder="First Name"/><br>
+                  <input type="text" id="startTime" name="startTime" placeholder="Task Start Time"/><br>
+                  <input type="text" id="endTime" name="endTime" placeholder="Task End Time"/><br>
+                  <input type="text" id="phonenumber" name="phonenumber" placeholder="Phone Number"/><br>
+                  <input id="button" value="Submit" type="submit" />
               </form>
               <br/>
-              <div id="output"></div>
         </div>
     </body>  
 
