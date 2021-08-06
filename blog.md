@@ -1,6 +1,9 @@
-# [Replace this with your project title]
+# TimeBlocker
 
 ## About Me
+
+Hi, my name is Kaley! I'm a rising senior in high school from the Bay Area. 
+I like reading, swimming, and stressing over college applications. 
 
 ## The Premise
 

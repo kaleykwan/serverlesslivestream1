@@ -8,9 +8,7 @@ function formData() {
     const response = fetch(url, {
         method: 'POST',
         body: JSON.stringify({name: name, startTime: startTime, endTime: endTime, phonenumber: phonenumber}),
-    }).then(response=>response.json()).then(data => {
-        console.log(data); // JSON data parsed by `data.json()` call
-      });
+    })
 
     console.log(response)
     $('#output').text("Check your phone for notifications!")

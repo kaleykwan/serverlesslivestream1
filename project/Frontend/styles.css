@@ -17,6 +17,12 @@ input[type="submit"] {
     background: rgb(248, 225, 234);
 }
 
+input[type="time"] {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 57px;
+}
+
 body {background-color:rgb(248, 225, 234);}
         
 h1 {        
