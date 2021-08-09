@@ -1,6 +1,6 @@
 const CosmosClient = require("@azure/cosmos").CosmosClient;
-const accountSid = "AC8f903c0def61794a5f0cd7ac190ff372";
-const authToken = "d2082f9e4007a406e01a14275b029f15";
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioClient = require('twilio')(accountSid, authToken);
 
 const config = {

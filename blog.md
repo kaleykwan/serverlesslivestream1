@@ -204,4 +204,4 @@ After you deploy this function, head to twilio.com and create an account. Once y
 Most of these tools were entirely new concepts to me, so building this web app was a really fun challenge and a really great opportunity to learn more about Serverless and Azure functions!
 
 ## Thanks and Acknowledgements
-Thank you to BitProject for hosting such a fun and engaging camp, my instructors for being patient and helpful whenever my code deigned not to work, and especially my mentor for 1) letting me get you hooked on Manifest and 2) readily helping me debug every problem.
+Thank you to BitProject for hosting such a fun and educational camp, to my instructors for being patient and helpful whenever my code deigned not to work, and especially to my mentor for 1) letting me get you hooked on Manifest and 2) readily helping me debug every problem.
