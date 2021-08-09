@@ -14,7 +14,6 @@ module.exports = async function (context, req) {
     
     let items = await createDocument(req.body)
   
-    console.log(items)
     context.res={
         body: null
     }
