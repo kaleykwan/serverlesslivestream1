@@ -13,6 +13,7 @@ const config = {
 
 
 module.exports = async function (context, myTimer) {
+    //access Cosmos DB container
     var { endpoint, key, databaseId, containerId } = config;
     const client = new CosmosClient({ endpoint, key });
     const { database } = await client.databases.createIfNotExists({ id: "TimeBlocker" });
@@ -20,6 +21,7 @@ module.exports = async function (context, myTimer) {
     const { container } = await database.containers.createIfNotExists({ id: "data" });
     console.log(container.id);
 
+    //call current time
     var today = new Date();
     var time = String(today.getHours()).padStart(2, '0') + ":" + String(today.getMinutes()).padStart(2, '0');
     console.log(time)
@@ -32,7 +34,6 @@ module.exports = async function (context, myTimer) {
         })
         .fetchAll();
     const sTime = startTime.resources
-    console.log(sTime)
 
     //call a list of end times from database that match the current time
     const endTime = await container.items
@@ -45,10 +46,9 @@ module.exports = async function (context, myTimer) {
 
     let message = ''
 
+    //use Twilio to send a text message if start time matches current time
     for (item in sTime) {
         message = "Hello, " + sTime[item].name + "! The time block for this task begins now."
-        console.log(item)
-        console.log(message)
         twilioClient.messages
             .create({
                 body: message,
@@ -58,6 +58,7 @@ module.exports = async function (context, myTimer) {
             .then(message => console.log(message.sid));
     }
     
+    //use Twilio to send a text message if end time matches current time
     for (item in eTime) {
         message = "Hello, " + eTime[item].name + "! The time block for this task ends now."
         twilioClient.messages

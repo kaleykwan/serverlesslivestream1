@@ -127,8 +127,8 @@ We are almost done! The second Azure function necessary to complete the backend 
 Here is the code to send a text message notification:
 ```javascript
 const CosmosClient = require("@azure/cosmos").CosmosClient;
-const accountSid = "AC8f903c0def61794a5f0cd7ac190ff372";
-const authToken = "d2082f9e4007a406e01a14275b029f15";
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioClient = require('twilio')(accountSid, authToken);
 
 const config = {
@@ -139,7 +139,9 @@ const config = {
     partitionKey: { kind: "Hash", paths: ["/formdata"] }
 };
 
+
 module.exports = async function (context, myTimer) {
+    //access Cosmos DB container
     var { endpoint, key, databaseId, containerId } = config;
     const client = new CosmosClient({ endpoint, key });
     const { database } = await client.databases.createIfNotExists({ id: "TimeBlocker" });
@@ -147,6 +149,7 @@ module.exports = async function (context, myTimer) {
     const { container } = await database.containers.createIfNotExists({ id: "data" });
     console.log(container.id);
 
+    //call current time
     var today = new Date();
     var time = String(today.getHours()).padStart(2, '0') + ":" + String(today.getMinutes()).padStart(2, '0');
     console.log(time)
@@ -159,7 +162,6 @@ module.exports = async function (context, myTimer) {
         })
         .fetchAll();
     const sTime = startTime.resources
-    console.log(sTime)
 
     //call a list of end times from database that match the current time
     const endTime = await container.items
@@ -172,10 +174,9 @@ module.exports = async function (context, myTimer) {
 
     let message = ''
 
+    //use Twilio to send a text message if start time matches current time
     for (item in sTime) {
         message = "Hello, " + sTime[item].name + "! The time block for this task begins now."
-        console.log(item)
-        console.log(message)
         twilioClient.messages
             .create({
                 body: message,
@@ -185,6 +186,7 @@ module.exports = async function (context, myTimer) {
             .then(message => console.log(message.sid));
     }
     
+    //use Twilio to send a text message if end time matches current time
     for (item in eTime) {
         message = "Hello, " + eTime[item].name + "! The time block for this task ends now."
         twilioClient.messages
@@ -197,7 +199,7 @@ module.exports = async function (context, myTimer) {
     }
 }
 ```
-After you deploy this function, head to twilio.com and create an account. Once your account is made, create a new number and place the function URL into the "Webhook" box under the Messaging section. Then, every time the timer trigger function is called, that Twilio number will send the text message to the user and notify them. 
+In order to use the Twilio API, you must go to twilio.com and create an account. Then you will be able to access your Account SID and Auth Token as utilized at the top of the code, as well as create a phone number for the value for "from". 
 
 ## Challenges + lessons learned
 
