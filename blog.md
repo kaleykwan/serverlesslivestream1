@@ -6,7 +6,7 @@ TimeBlocker improves productivity by automating the time blocking productivity m
 
 ## Introduction
 
-As a student, I am always struggling with productivity and keeping myself from becoming overwhelmed. The TimeBlocker app is intended to help with that, by automating the "time blocking" productivity method for users. With this method, each task is allocated a certain amount, or block, of time to do. The user ends up with a concrete schedule for the day, instead of an open-ended to-do list. TimeBlocker would make it easy for the user to remember when a task's block of time starts and ends, by sending the user a text message notification.
+As a student, I am always struggling with productivity and keeping myself from becoming overwhelmed. The TimeBlocker app is intended to help with that, by automating the "time blocking" productivity method for users. With this method, each task is allocated a certain amount, or block, of time to do. The user ends up with a concrete schedule for the day, instead of an open-ended to-do list. TimeBlocker would make it easy for the user to remember when a task's block of time starts and ends, by sending the user a text notification.
 
 ## About Me
 
