@@ -6,7 +6,7 @@ TimeBlocker improves productivity by automating the time blocking productivity m
 
 ## Introduction
 
-As a student, I am always struggling with productivity and keeping myself from becoming overwhelmed. The TimeBlocker app is intended to help with that, by automating the "time blocking" productivity method for users. In this method, each task is allocated a certain amount, or block, of time to do. The user ends up with a concrete schedule for the day, instead of an open-ended to-do list. TimeBlocker would make it easy for the user to remember when a task's block of time starts and ends, by sending the user a text message notification.
+As a student, I am always struggling with productivity and keeping myself from becoming overwhelmed. The TimeBlocker app is intended to help with that, by automating the "time blocking" productivity method for users. With this method, each task is allocated a certain amount, or block, of time to do. The user ends up with a concrete schedule for the day, instead of an open-ended to-do list. TimeBlocker would make it easy for the user to remember when a task's block of time starts and ends, by sending the user a text message notification.
 
 ## About Me
 
@@ -14,15 +14,15 @@ My name is Kaley Kwan. I'm a senior in high school from the Bay Area. I am a swi
 
 ## Behind the Scenes
 
-![Serverless Camp Project](https://user-images.githubusercontent.com/67166728/132080128-01f299b7-6c22-4ffe-9655-568dfe108e84.jpg)
+![Serverless Flowchart](https://user-images.githubusercontent.com/67166728/132081469-cfff45d7-0481-4d06-9710-ab9f41898944.jpg)
 
 ### The Form
 
-First, you fill out a form with your name, the start time for your task, the end time, and your phone number. 
+First, you fill out a form with your name, the start time for your task, the end time, and your phone number. This information gets sent to an HTTP-Trigger Function, where it is then stored in Cosmos DB.
 
 ### Text Notifications
 
-When the current time matches the time you input for the start and end of your task, you will receive a text message notifying you.
+A Timer-Trigger Function runs every minute, checking the current time against the task start times and end times stored in Cosmos DB. When the current time matches the time you input for the start and end of your task, the Twilio API is used to send a text message to your phone notifying you. 
 
 ## Technologies
 
@@ -44,7 +44,9 @@ This API was used to send text notifications to users.
 
 ## Moving Forward
 
+When I entered this program, I knew very little about coding and was a little bit intimidated. But over the course of the camp, I learned about web development, Serverless and Azure functions, and how to brainstorm and build my own project from scratch. I faced challenges and bumps along the way with the development of the idea and the implementation of the project, but that allowed me to grow as both a coder and as a person.
+
 There are a lot of features that can be added to expand the web app, including a field in the form for a task description, and a history of a user's tasks. Additionally, there are a lot of other potential uses for this web app outside of the time blocking productivity method!
 
 ## Thanks and Acknowledgements
-Thank you to BitProject for hosting such a fun and educational camp, to my instructors for being patient and helpful whenever my code deigned not to work, and especially to my mentor for readily helping me debug every problem. Most of these tools were entirely new to me, so building this web app was a really fun challenge and a really great opportunity to learn more about Serverless and Azure functions!
+Thank you to BitProject for hosting such a fun and educational camp, to my instructors for being patient and helpful whenever my code deigned not to work, and especially to my mentor Rohan for readily helping me debug every problem. Most of these tools were entirely new to me, so building this web app was a really fun challenge and a really great opportunity to learn more about Serverless and Azure functions!
